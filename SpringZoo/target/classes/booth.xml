@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<context:property-placeholder location="classpath*:config.properties"/>
+	<context:annotation-config />
+	<context:component-scan base-package="edu.springsample.booth" />
+
+	<bean id="zooBooth" class="edu.zoo.booth.Zoo"/>
+	
+<!-- Staff members -->
+	<bean class="edu.zoo.booth.classes.StaffMember">
+		<property name="name" value="${staff.member1}" />
+	</bean>
+
+	<bean class="edu.zoo.booth.classes.StaffMember">
+		<property name="name" value="${staff.member2}" />
+	</bean>
+	<bean class="edu.zoo.booth.classes.StaffMember">
+		<property name="name" value="${staff.member3}" />
+	</bean>
+	<bean class="edu.zoo.booth.classes.StaffMember">
+		<property name="name" value="${staff.member4}" />
+	</bean>
+
+<!-- Tickets -->
+	<bean class="edu.zoo.booth.classes.Ticket">
+		<property name="price" value="${tickets.price1}" />
+	</bean>
+
+	<bean class="edu.zoo.booth.classes.Ticket">
+		<property name="price" value="${tickets.price2}" />
+	</bean>
+	<bean class="edu.zoo.booth.classes.Ticket">
+		<property name="price" value="${tickets.price3}" />
+	</bean>
+
+	<bean class="edu.zoo.booth.classes.Ticket">
+		<property name="price" value="${tickets.price4}" />
+	</bean>
+
+
+<!-- Animals -->
+	<bean class="edu.zoo.booth.classes.Animal">
+		<property name="animal" value="${animals.animal1}" />
+	</bean>
+
+	<bean class="edu.zoo.booth.classes.Animal">
+		<property name="animal" value="${animals.animal2}" />
+	</bean>
+	<bean class="edu.zoo.booth.classes.Animal">
+		<property name="animal" value="${animals.animal3}" />
+	</bean>
+
+	<bean class="edu.zoo.booth.classes.Animal">
+		<property name="animal" value="${animals.animal4}" />
+	</bean>
+
+</beans>
